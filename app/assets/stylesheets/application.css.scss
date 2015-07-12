@@ -45,6 +45,32 @@ nav {
 	letter-spacing: .3em;
 }
 
+// BUTTOM
+.btn{
+	background:rgba(0, 0, 0, 0.22);
+	border: solid 2px #fff;
+	border-radius: 0;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.1em;
+	letter-spacing: 2px;
+	font-family: 'Josefin Sans';
+	letter-spacing: .3em;
+	width: 200px;
+	height: 50px;
+	transition: all 0.3s ease 0s;
+}
+
+// Button Changes when hovered, focuses, active
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn.active {
+	background:rgba(0, 0, 0, 0.55);
+	color: #fff;
+	outline: none;
+}
+
 // HEADER
 	.logo {
 		margin-top:25px;
@@ -72,4 +98,16 @@ nav {
 .main-content {
 	max-width: 912px;
 	margin: 0 auto;
+}
+
+// DEVISE FORMS
+.devise-form {
+	margin-top: 10%;
+	.form-logo {
+		margin-bottom: 50px;
+	}
+	input {
+		font-family: 'Josefin Sans';
+		letter-spacing: .3em;
+	}
 }
