@@ -5,7 +5,7 @@
 // FONTS
 @import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic);
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans:600);
-@font-face { font-family: UpperEastSide; src: url("../fonts/UpperEastSide.ttf"); }
+@font-face { font-family: UpperEastSide; src: url("fonts/UpperEastSide.ttf"); }
 
 // BASE FONTS
 body {
@@ -24,6 +24,41 @@ h1, h2, h3, h4, h5 {
     letter-spacing: .2em;
   }
 }
+nav {
+	font-family: 'UpperEastSide';
+	letter-spacing: .3em;
+}
+
+// HEADER
+	.logo {
+		margin-top:25px;
+	}
+	nav{
+		margin: 25px auto;
+		width: 912px;
+		height: 40px;
+		border-radius: 0;
+		.navbar {
+
+		}
+		ul {
+			li {
+				width: 130px;
+			}
+		}
+	}
+	@media (min-width: 768px) {
+		.navbar {
+		  border-radius: 0;
+		}
+	}
+// MAIN CONTENT
+.main-content {
+	max-width: 912px;
+	margin: 0 auto;
+}
+
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

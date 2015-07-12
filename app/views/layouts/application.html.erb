@@ -28,8 +28,28 @@
     </div>
   <% end %>
 
+  <!-- HEADER -->
+  <div id="header" class="container text-center">
+    <div class="logo">
+      <%= image_tag src="LOGO.png" %>
+      <h5>Los Angeles Creative Directory</h5>
+    </div>
+    <nav class="navbar navbar-default text-center" role="navigation">
+      <ul class="nav navbar-nav">
+        <li role"presentation"><%= link_to "SEE ME", "#" %></li>
+        <li role"presentation"><%= link_to "TOUCH ME", "#" %></li>
+        <li role"presentation"><%= link_to "HEAR ME", "#" %></li>
+        <li role"presentation"><%= link_to "TASTE ME", "#" %></li>
+        <li role"presentation"><%= link_to "SEE ME", "#" %></li>
+        <li role"presentation"><%= link_to "SMELL ME", "#" %></li>
+        <li role"presentation"><%= link_to "KNOW ME", "#" %></li>
+      </ul>
+    </nav>
+
+  </div>
+
   <!-- MAIN CONTENT -->
-  <div class="container-fluid">
+  <div class="main-content container-fluid">
     <%= yield %>
   </div>
 
