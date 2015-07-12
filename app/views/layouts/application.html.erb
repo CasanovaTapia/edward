@@ -28,6 +28,7 @@
     </div>
   <% end %>
 
+<% unless current_page?(root_url) %>
   <!-- HEADER -->
   <div id="header" class="container text-center">
     <div class="logo">
@@ -45,13 +46,15 @@
         <li role"presentation"><%= link_to "KNOW ME", "#" %></li>
       </ul>
     </nav>
-
   </div>
+
+  <% end %>
 
   <!-- MAIN CONTENT -->
   <div class="main-content container-fluid">
     <%= yield %>
   </div>
+
 
 </body>
 </html>
