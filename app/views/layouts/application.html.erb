@@ -28,6 +28,9 @@
     </div>
   <% end %>
 
+  <% if current_user %>
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+  <% end %>
 <!-- <% unless current_page?(root_url) %>
   <div id="header" class="container text-center">
     <div class="logo">
@@ -40,7 +43,6 @@
         <li role"presentation"><%= link_to "TOUCH ME", "#" %></li>
         <li role"presentation"><%= link_to "HEAR ME", "#" %></li>
         <li role"presentation"><%= link_to "TASTE ME", "#" %></li>
-        <li role"presentation"><%= link_to "SEE ME", "#" %></li>
         <li role"presentation"><%= link_to "SMELL ME", "#" %></li>
         <li role"presentation"><%= link_to "KNOW ME", "#" %></li>
       </ul>
@@ -53,8 +55,5 @@
   <div class="main-content container-fluid">
     <%= yield %>
   </div>
-  <% if current_user %>
-    <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-  <% end %>
 </body>
 </html>
