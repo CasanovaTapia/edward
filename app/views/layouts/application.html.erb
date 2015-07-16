@@ -39,12 +39,10 @@
     </div>
     <nav class="navbar navbar-default text-center" role="navigation">
       <ul class="nav navbar-nav">
-        <li role"presentation"><%= link_to "SEE ME", "#" %></li>
-        <li role"presentation"><%= link_to "TOUCH ME", "#" %></li>
-        <li role"presentation"><%= link_to "HEAR ME", "#" %></li>
-        <li role"presentation"><%= link_to "TASTE ME", "#" %></li>
-        <li role"presentation"><%= link_to "SMELL ME", "#" %></li>
-        <li role"presentation"><%= link_to "KNOW ME", "#" %></li>
+        <% Category.all.each do |category| %>
+          <li role="presentation"><%= link_to "#{category.name} me", category %></li>
+        <% end %>
+        <li role"presentation"><%= link_to "KNOW ME", static_about_path %></li>
       </ul>
     </nav>
   </div>

@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'static#temp'
 
   resources :posts
-  # get 'about', to: 'static#about', as: :static_about
+  resources :categories
+  get 'know', to: 'static#about', as: :static_about
 end
