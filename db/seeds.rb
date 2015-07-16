@@ -31,10 +31,11 @@ Status.create!(id: 3, name: "published")
 statuses = Status.all
 
 # Create Posts
+Post.delete_all
 20.times do
    Post.create(
     title:      			Faker::Team.name,
-    body:            	Faker::Lorem.paragraphs(3, true).to_s,
+    body:            	Faker::Lorem.paragraphs(3, true).join,
 		user:          		users.sample,
 		category:         categories.sample,
 		status:           statuses.sample
