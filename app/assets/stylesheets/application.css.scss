@@ -45,6 +45,14 @@ nav {
 	letter-spacing: .3em;
 	text-transform: uppercase;
 }
+a, a:visited, a:link, a:active {
+	color: #d6d6d6;
+	text-decoration: none;
+}
+a:hover {
+	color: #999;
+	text-decoration: none;
+}
 
 // BUTTOM
 .btn{
@@ -111,4 +119,8 @@ nav {
 		font-family: 'Josefin Sans';
 		letter-spacing: .3em;
 	}
+}
+
+.footer {
+	color: #d6d6d6;
 }
