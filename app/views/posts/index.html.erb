@@ -1,6 +1,10 @@
+<div class="head-post">
+  <h2 class="text-center"><%= @posts.first.title %></h2>
+  <p><%= @posts.first.body %></p>
+</div>
 <div class="row">
   <% @posts.each do |post| %>
-    <div class="col-md-6 post-quick">
+    <div class="col-md-5 post-quick">
       <h4 class="text-center"><%= post.title %></h4>
       <p>
         <%= "#{post.body[2...300]}..." %>
