@@ -31,7 +31,7 @@ class ImagesController < ApplicationController
 	private
 
 		def image_params
-			params.require(:image).permit(:title)
+			params.require(:image).permit(:title, :avatar)
 		end
 
 		def set_post

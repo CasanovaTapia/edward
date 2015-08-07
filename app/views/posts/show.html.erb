@@ -3,6 +3,9 @@
 <div class="images">
 	<% @post.images.each do |image| %>
 		<%= image.title %>
+		<% if image.avatar? %>
+			<%= image_tag( image.avatar.url ) %>
+		<% end %>
 	<% end %>
 </div>
 

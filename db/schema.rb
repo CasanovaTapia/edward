@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150807021928) do
+ActiveRecord::Schema.define(version: 20150807024459) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150807021928) do
     t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar"
   end
 
   add_index "images", ["post_id"], name: "index_images_on_post_id"
