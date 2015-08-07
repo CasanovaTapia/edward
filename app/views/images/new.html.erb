@@ -1,0 +1,11 @@
+<h2>New Image</h2>
+
+<%= form_for [@post, @image] do |f| %>
+	<div class="form-group">
+		<%= f.text_field :title, class: 'form-control', placeholder: 'title' %>
+	</div>
+
+	<div class="form-group">
+		<%= f.submit "save", class: 'btn' %>
+	</div>
+<% end %>
