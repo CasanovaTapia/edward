@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy, :tag]
 
   def index
     @profiles = Profile.all
@@ -16,6 +16,10 @@ class ProfilesController < ApplicationController
   end
 
   def edit
+    authorize @profile
+  end
+
+  def tag
     authorize @profile
   end
 
@@ -62,6 +66,6 @@ class ProfilesController < ApplicationController
     end
 
     def profile_params
-      params.require(:profile).permit(:name, :location, :bio, :website, :curr_project, :industry_id, :avatar, :twitter, :instagram, :facebook, :imdb, :portfolio)
+      params.require(:profile).permit(:name, :tagline, :location, :bio, :website, :curr_project, :industry_id, :avatar, :twitter, :instagram, :facebook, :imdb, :portfolio)
     end
 end

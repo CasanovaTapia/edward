@@ -11,6 +11,10 @@ class ProfilePolicy < ApplicationPolicy
     user.present? && user.admin?
   end
 
+  def tag_edit?
+    update?
+  end
+
   class Scope < Scope
     def resolve
       scope

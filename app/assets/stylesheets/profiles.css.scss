@@ -4,11 +4,34 @@
 
 
 // INDEX
-.profile-box {
-	height:300px;
-	margin:35px;
-
+.profile-index {
+	height: 120px;
+	background-color: #f8f8f8;
+  border: solid 1px #e7e7e7;
+	padding-top: 10px;
+	margin: 10px;
+}
+.tag-small {
+	font-size: .7em;
+	letter-spacing: .1em;
+}
+.index-avatar {
 	img {
-		height: 200px;
+		height: 100px;
+	}
+}
+
+// SHOW
+.hr-profile {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.profile-sidebar {
+	background-color: #f8f8f8;
+  border: solid 1px #e7e7e7;
+	padding-top: 10px;
+	img {
+		width: 200px;
+		margin: 0 auto;
 	}
 }

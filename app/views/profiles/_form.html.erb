@@ -17,27 +17,24 @@
       <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: 'Name' %>
     </div>
     <div class="form-group">
-      <%= f.text_field :location, autofocus: true, class: 'form-control', placeholder: 'Location' %>
-    </div>
-    <div class="form-group">
-      <%= f.text_field :bio, autofocus: true, class: 'form-control', placeholder: 'Bio Tagline' %>
-    </div>
-    <div class="form-group">
-      <%= f.text_field :website, autofocus: true, class: 'form-control', placeholder: 'Website' %>
-    </div>
-    <div class="form-group">
-      <%= f.text_field :curr_project, autofocus: true, class: 'form-control', placeholder: 'Currently working on' %>
-    </div>
-    <div class="form-group">
       <%= f.label :industry %>
       <%= f.select :industry_id, options_from_collection_for_select(Industry.all, "id", "title") %>
     </div>
-  </div>
-  <div class="col-md-6">
     <div class="form-group">
       <%= f.label :avatar %>
       <%= f.file_field :avatar %>
       <%= f.hidden_field :avatar_cache %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :location, autofocus: true, class: 'form-control', placeholder: 'City' %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :curr_project, autofocus: true, class: 'form-control', placeholder: 'Currently working on' %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= f.text_field :website, autofocus: true, class: 'form-control', placeholder: 'Main website' %>
     </div>
     <div class="form-group">
       <%= f.text_field :twitter, autofocus: true, class: 'form-control', placeholder: 'Twitter' %>
@@ -55,7 +52,10 @@
       <%= f.text_field :portfolio, autofocus: true, class: 'form-control', placeholder: 'Portfolio Link' %>
     </div>
   </div>
-  <div class="col-md-12 text-center form-group">
+  <div class="col-md-12">
+    <div class="form-group">
+      <%= f.text_area :bio, autofocus: true, class: 'form-control', placeholder: 'Short bio and description of work' %>
+    </div>
     <%= f.submit "Submit", class: 'btn' %>
   </div>
 </div>

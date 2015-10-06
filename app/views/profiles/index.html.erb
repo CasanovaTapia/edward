@@ -1,21 +1,39 @@
-<div class="row">
-  <% @profiles.each do |profile| %>
-    <%= link_to profile do %>
-      <div class="col-md-5 profile-box text-center">
-        <%= image_tag(profile.avatar.profile.url) if profile.avatar? %>
-        <h6><%= profile.name %></h6>
-        <p>
-          <% if profile.bio? %>
-            <%= profile.bio %>
-          <% else %>
-            This Edwardian has an empty bio
-          <% end %>
-        </p>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-
 <% if current_user.present? %>
   <%= link_to 'New Profile', new_profile_path %>
 <% end %>
+<div class="row">
+  <% @profiles.each do |profile| %>
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row">
+        <div class="profile-index">
+          <%= link_to profile do %>
+            <div class="col-xs-3 index-avatar text-right">
+              <% if profile.avatar? %>
+                <%= image_tag(profile.avatar.profile.url) %>
+              <% else %>
+                <%= image_tag('avatar.png') %>
+              <% end %>
+            </div>
+            <div class="col-xs-9 text-left">
+              <h6><%= profile.name %></h6>
+              <p class="tag-small">
+                <% if profile.tagline? %>
+                  <%= "Tagged at #{profile.tagline} #{time_ago_in_words(profile.updated_at)} ago" %>
+                <% else %>
+                  Not yet tagged
+                <% end %>
+              </p>
+              <p class="tag-small">
+                <% if profile.curr_project? %>
+                  <%= "Currently working on #{profile.curr_project}" %>
+                <% else %>
+                  No info on current project
+                <% end %>
+              </p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

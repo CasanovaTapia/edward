@@ -1,28 +1,35 @@
-<div class="text-center">
+<div>
   <p id="notice"><%= notice %></p>
-  <h4><%= @profile.name %></h4>
-
-  <%= image_tag(@profile.avatar.profile.url) if @profile.avatar? %>
+  <h4 class="profile-name"><%= @profile.name %></h4>
+  <hr class="hr-profile">
+  <p class="tag">
+    <% if @profile.tagline? %>
+      <%= "Last seen at #{@profile.tagline}, tagged #{time_ago_in_words(@profile.updated_at)} ago" %>
+    <% else %>
+      We haven't seen this Edwardian in public
+    <% end %>
+  </p>
+  <% if policy(@profile).edit? %>
+    <%= render 'tag' %>
+  <% end %>
+  <div class="text-right">
+    <% if policy(@profile).edit? %>
+      <%= link_to 'Edit |', edit_profile_path(@profile) %>
+    <% end %>
+    <% if policy(@profile).destroy? %>
+      <%= link_to '| Delete', @profile, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
   <div class="text-left row">
-    <div class="col-md-6">
-      <p>
-        <strong>Location.</strong>
-        <% if @profile.location? %>
-          <%= @profile.location %>
-        <% else %>
-          An empty location isn't very helpful
-        <% end %>
-      </p>
-
-      <p>
-        <strong>Short bio.</strong>
-        <% if @profile.bio? %>
-          <%= @profile.bio %>
-        <% else %>
-          An empty bio isn't very helpful
-        <% end %>
-      </p>
-
+    <div class="col-md-8">
+      <% if @profile.bio? %>
+        <p>@profile.bio</p>
+      <% else %>
+        <p>We currently have no information on this Edwardian's bio or projects.</p>
+      <% end %>
+    </div>
+    <div class="profile-sidebar col-md-4">
+      <%= image_tag(@profile.avatar.profile.url) if @profile.avatar? %>
       <p>
         <strong>Industry.</strong>
         <% if @profile.industry_id? %>
@@ -31,13 +38,20 @@
           An empty industry isn't very helpful
         <% end %>
       </p>
-
+      <p>
+        <strong>City.</strong>
+        <% if @profile.location? %>
+          <%= @profile.location %>
+        <% else %>
+          An empty city isn't very helpful
+        <% end %>
+      </p>
       <p>
         <strong>Currently working on.</strong>
         <% if @profile.curr_project? %>
           <%= @profile.curr_project %>
         <% else %>
-          An empty current project isn't very helpful
+          Empty current project
         <% end %>
       </p>
 
@@ -49,8 +63,6 @@
           An empty website isn't very helpful
         <% end %>
       </p>
-    </div>
-    <div class="col-md-6">
       <p>
         <strong>Portfolio.</strong>
         <% if @profile.portfolio? %>
@@ -81,11 +93,6 @@
   </div>
 
 
-  <% if policy(@profile).edit? %>
-    <%= link_to 'Edit', edit_profile_path(@profile) %>
-  <% end %>
-  <% if policy(@profile).destroy? %>
-  	<%= link_to 'Delete', @profile, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
+
 
 </div>

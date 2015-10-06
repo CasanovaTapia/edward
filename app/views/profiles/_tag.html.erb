@@ -1,0 +1,6 @@
+<%= form_for(@profile) do |f| %>
+  <div class="form-group">
+    <%= f.text_field :tagline, autofocus: true, value: 'Update tag' %>
+  	<%= f.submit "Submit"%>
+	</div>
+<% end %>
