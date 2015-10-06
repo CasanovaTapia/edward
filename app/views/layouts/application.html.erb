@@ -39,7 +39,7 @@
     </div>
     <nav class="navbar navbar-default text-center" role="navigation">
       <ul class="nav navbar-nav">
-        <li role"presentation"><%= link_to "KNOW ME", static_about_path %></li>
+        <li role"presentation"><%= link_to "KNOW ME", profiles_index_path %></li>
         <% Category.all.each do |category| %>
           <li role="presentation"><%= link_to "#{category.name} me", category %></li>
         <% end %>

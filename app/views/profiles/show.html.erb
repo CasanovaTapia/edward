@@ -1,67 +1,88 @@
-<p id="notice"><%= notice %></p>
+<div class="text-center">
+  <p id="notice"><%= notice %></p>
+  <h4><%= @profile.name %></h4>
 
-<%= image_tag(@profile.avatar.profile.url) if @profile.avatar? %>
+  <%= image_tag(@profile.avatar.profile.url) if @profile.avatar? %>
+  <div class="text-left row">
+    <div class="col-md-6">
+      <p>
+        <strong>Location.</strong>
+        <% if @profile.location? %>
+          <%= @profile.location %>
+        <% else %>
+          An empty location isn't very helpful
+        <% end %>
+      </p>
+
+      <p>
+        <strong>Short bio.</strong>
+        <% if @profile.bio? %>
+          <%= @profile.bio %>
+        <% else %>
+          An empty bio isn't very helpful
+        <% end %>
+      </p>
+
+      <p>
+        <strong>Industry.</strong>
+        <% if @profile.industry_id? %>
+          <%= @profile.industry.title %>
+        <% else %>
+          An empty industry isn't very helpful
+        <% end %>
+      </p>
+
+      <p>
+        <strong>Currently working on.</strong>
+        <% if @profile.curr_project? %>
+          <%= @profile.curr_project %>
+        <% else %>
+          An empty current project isn't very helpful
+        <% end %>
+      </p>
+
+      <p>
+        <strong>Main website.</strong>
+        <% if @profile.website? %>
+          <%= @profile.website %>
+        <% else %>
+          An empty website isn't very helpful
+        <% end %>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <p>
+        <strong>Portfolio.</strong>
+        <% if @profile.portfolio? %>
+          <%= @profile.portfolio %>
+        <% else %>
+          An empty portfolio isn't very helpful
+        <% end %>
+      </p>
+
+      <p>
+        <strong>Twitter.</strong>
+        <% if @profile.twitter? %>
+          <%= @profile.twitter %>
+        <% else %>
+          No twitter handle
+        <% end %>
+      </p>
+
+      <p>
+        <strong>Instagram.</strong>
+        <% if @profile.instagram? %>
+          <%= @profile.instagram %>
+        <% else %>
+          No instagram handle
+        <% end %>
+      </p>
+    </div>
+  </div>
 
 
-<p>
-  <strong>Name:</strong>
-  <%= @profile.name %>
-</p>
+  <% if policy(@profile).edit? %>
+    <%= link_to 'Edit', edit_profile_path(@profile) %>
+  <% end %>
 
-<p>
-  <strong>Location:</strong>
-  <%= @profile.location %>
-</p>
-
-<p>
-  <strong>Bio:</strong>
-  <%= @profile.bio %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @profile.website %>
-</p>
-
-<p>
-  <strong>Curr project:</strong>
-  <%= @profile.curr_project %>
-</p>
-
-<p>
-  <strong>Industry:</strong>
-  <%= @profile.industry %>
-</p>
-
-<p>
-  <strong>Avatar:</strong>
-  <%= @profile.avatar %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @profile.twitter %>
-</p>
-
-<p>
-  <strong>Instagram:</strong>
-  <%= @profile.instagram %>
-</p>
-
-<p>
-  <strong>Facebook:</strong>
-  <%= @profile.facebook %>
-</p>
-
-<p>
-  <strong>Imdb:</strong>
-  <%= @profile.imdb %>
-</p>
-
-<p>
-  <strong>Portfolio:</strong>
-  <%= @profile.portfolio %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+</div>

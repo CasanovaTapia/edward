@@ -12,5 +12,5 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  get 'know', to: 'static#about', as: :static_about
+  get 'know', to: 'profiles#index', as: :profiles_index
 end
