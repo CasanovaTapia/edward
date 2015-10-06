@@ -31,8 +31,8 @@
     <% if current_user %>
       <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
     <% else %>
-      <%= link_to "Create Account", new_user_registration_path %>
-      <%= link_to "Log In", new_user_session_path %>
+      <%= link_to "New Account |", new_user_registration_path %>
+      <%= link_to "| Log In", new_user_session_path %>
     <% end %>
   </div>
 
@@ -40,7 +40,7 @@
   <div id="header" class="container text-center">
     <div class="logo">
       <%= image_tag src="LOGO.png" %>
-      <h5>Los Angeles Creative Directory</h5>
+      <h6>A Directory for Creatives</h6>
     </div>
     <nav class="navbar navbar-default text-center" role="navigation">
       <ul class="nav navbar-nav">
