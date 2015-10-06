@@ -8,6 +8,7 @@ class ImagesController < ApplicationController
 	def create
 		@image = @post.images.new(image_params)
 		@image.user = current_user
+		authorize @image
 		if @image.save
 			flash[:notice] = "Image was saved."
 			redirect_to @post
@@ -19,6 +20,7 @@ class ImagesController < ApplicationController
 
 	def destroy
 		@image = Image.find(params[:id])
+		authorize @image
 		if @image.destroy
 			flash[:notice] = "Image was deleted."
 			redirect_to @post

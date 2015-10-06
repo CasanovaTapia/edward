@@ -4,4 +4,8 @@ class StaticController < ApplicationController
 
 	def temp
 	end
+
+	def profiles
+		@users = User.all
+	end
 end
