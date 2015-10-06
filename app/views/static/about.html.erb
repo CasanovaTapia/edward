@@ -1,5 +1,7 @@
-<div class='row'>
-	<div class='col-md-6 col-md-offset-3'>
-		<h5 class='text-center'>The New Edwardians<br/> is a collection of profiles in the Los Angeles creative industry</h5>
-	</div>
+<div class="row">
+  <% @users.each do |user| %>
+    <div class="col-md-5 post-quick">
+      <h4 class="text-center"><%= user.name %></h4>
+    </div>
+  <% end %>
 </div>
