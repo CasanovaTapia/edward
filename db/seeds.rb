@@ -14,6 +14,17 @@ User.create(
 )
 users = User.all
 
+# Create Industries
+Industry.delete_all
+Industry.create!(title: "fine arts")
+Industry.create!(title: "film")
+Industry.create!(title: "photography")
+Industry.create!(title: "pr/marketing")
+Industry.create!(title: "fashion")
+Industry.create!(title: "digital media")
+Industry.create!(title: "interior design")
+industries = Industry.all
+
 # Create Categories
 Category.delete_all
 Category.create!(id: 1, name: "see")

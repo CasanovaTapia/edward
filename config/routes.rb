@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :industries
+
   devise_for :users
   root 'static#temp'
 
