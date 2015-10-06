@@ -3,16 +3,20 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = Profile.all
+    authorize @profiles
   end
 
   def show
+    authorize @profile
   end
 
   def new
     @profile = Profile.new
+    authorize @profile
   end
 
   def edit
+    authorize @profile
   end
 
   def create

@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag(@profile.avatar.profile.url) if @profile.avatar? %>
+
+
 <p>
   <strong>Name:</strong>
   <%= @profile.name %>
