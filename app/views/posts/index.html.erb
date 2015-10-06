@@ -10,8 +10,12 @@
         <%= "#{post.body[2...300]}..." %>
         <%= link_to 'Show More', post %>
       </p>
-      <%= link_to 'Edit', edit_post_path(post) %>
-      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if policy(post).edit? %>
+        <%= link_to 'Edit', edit_post_path(post) %>
+      <% end %>
+      <% if policy(post).destroy? %>
+        <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </div>
   <% end %>
 </div>

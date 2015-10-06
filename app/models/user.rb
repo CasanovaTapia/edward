@@ -8,4 +8,12 @@ class User < ActiveRecord::Base
   def admin?
     role == 'admin'
   end
+
+  def contributor?
+    role == 'contributor'
+  end
+
+  def premium?
+    role == 'premium'
+  end
 end

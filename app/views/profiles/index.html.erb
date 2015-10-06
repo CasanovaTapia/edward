@@ -16,5 +16,6 @@
   <% end %>
 </div>
 
-
-<%= link_to 'New Profile', new_profile_path %>
+<% if current_user.present? %>
+  <%= link_to 'New Profile', new_profile_path %>
+<% end %>

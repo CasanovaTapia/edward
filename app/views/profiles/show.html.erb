@@ -84,5 +84,8 @@
   <% if policy(@profile).edit? %>
     <%= link_to 'Edit', edit_profile_path(@profile) %>
   <% end %>
+  <% if policy(@profile).destroy? %>
+  	<%= link_to 'Delete', @profile, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 
 </div>
