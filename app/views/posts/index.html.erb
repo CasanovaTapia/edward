@@ -9,7 +9,7 @@
       <h4 class="text-center"><%= post.title %></h4>
       <p class="small"><%= "#{time_ago_in_words(post.created_at)} ago by #{post.user.name}" %></p>
       <p>
-        <%= "#{post.body[2...300]}..." %>
+        <%= "#{post.body[0...300]}..." %>
         <%= link_to 'Show More', post %>
       </p>
       <% if policy(post).edit? %>
