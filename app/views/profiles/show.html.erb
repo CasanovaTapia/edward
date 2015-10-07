@@ -9,8 +9,10 @@
       We haven't seen this Edwardian in public, be the first to tag them.
     <% end %>
   </p>
-  <% if policy(@profile).edit? %>
+  <% if current_user.present? %>
     <%= render 'tag' %>
+  <% else %>
+    <p class="small"><%= link_to "Log in to update the tag", new_user_session_path %></p>
   <% end %>
   <div class="text-right">
     <% if policy(@profile).edit? %>

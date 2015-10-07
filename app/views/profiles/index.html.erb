@@ -37,12 +37,16 @@
                 <% end %>
               </p>
           <% end %>
+            <% if current_user.present? %>
               <%= form_for(profile) do |f| %>
                 <div class="form-group">
                   <%= f.text_field :tagline, autofocus: true, value: 'Last seen at' %>
                 	<%= f.submit "Tag"%>
               	</div>
               <% end %>
+            <% else %>
+              <p class="small"><%= link_to "Log in to update the tag", new_user_session_path %></p>
+            <% end %>
             </div>
         </div>
       </div>

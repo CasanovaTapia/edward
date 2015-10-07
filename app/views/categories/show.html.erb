@@ -1,18 +1,24 @@
 <h2 class="text-center"><%= "#{@category.name} me" %></h2>
-<div class="head-post">
-  <h3 class="text-center"><%= @category.posts.first.title %></h3>
-  <p class="small text-center"><%= "#{time_ago_in_words(@category.posts.first.created_at)} ago by #{@category.posts.first.user.name}, #{@category.posts.first.comments.count} comments" %></p>
-  <p><%= @category.posts.first.body %></p>
-</div>
+
+  <div class="head-post">
+    <%= link_to @category.posts.first do %>
+    <h4 class="text-center"><%= @category.posts.first.title %></h4>
+    <p class="small text-center"><%= "#{time_ago_in_words(@category.posts.first.created_at)} ago by #{@category.posts.first.user.name}, #{@category.posts.first.comments.count} comments" %></p>
+    <% end %>
+    <p>
+      <%= @category.posts.first.body %>
+    </p>
+  </div>
+
 <% @category.posts.each do |post| %>
 	<div class="col-md-5 post-quick">
-		<h4 class="text-center"><%= post.title %></h4>
+		<h5 class="text-center"><%= post.title %></h5>
     <p class="small text-center"><%= "#{time_ago_in_words(post.created_at)} ago by #{post.user.name}, #{post.comments.count} comments" %></p>
 		<p>
 			<%= "#{post.body[0...300]}..." %>
-			<%= link_to 'Show More', post %>
+			<%= link_to 'Show More ||', post %>
 		</p>
-		<%= link_to 'Edit', edit_post_path(post) %>
-		<%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+		<%= link_to 'Edit |', edit_post_path(post) %>
+		<%= link_to '| Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
 	</div>
 <% end %>

@@ -20,7 +20,11 @@
 	<%= link_to '| Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 <hr>
-<%= render 'comments/form' %>
+<% if current_user.present? %>
+	<%= render 'comments/form' %>
+<% else %>
+  <p class="small"><%= link_to "Log in to add a comment", new_user_session_path %></p>
+<% end %>
 <% if @post.comments.count > 0 %>
 	<% @post.comments.each do |comment| %>
 		<p>
