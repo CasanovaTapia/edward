@@ -3,4 +3,5 @@ class Profile < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   default_scope { order('updated_at DESC') }
   validates_uniqueness_of :name
+  searchkick
 end
