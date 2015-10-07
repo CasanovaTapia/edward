@@ -6,7 +6,7 @@
     <% if @profile.tagline? %>
       <%= "Last seen at #{@profile.tagline}, tagged #{time_ago_in_words(@profile.updated_at)} ago" %>
     <% else %>
-      We haven't seen this Edwardian in public
+      We haven't seen this Edwardian in public, be the first to tag them.
     <% end %>
   </p>
   <% if policy(@profile).edit? %>
