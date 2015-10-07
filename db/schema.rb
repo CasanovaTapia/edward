@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151006233657) do
+ActiveRecord::Schema.define(version: 20151007005636) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20151006233657) do
   create_table "profiles", force: true do |t|
     t.string   "name"
     t.string   "location"
-    t.string   "bio"
+    t.text     "bio"
     t.string   "website"
     t.string   "curr_project"
     t.integer  "industry_id"
