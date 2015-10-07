@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :images
-    resources :comments
+    resources :comments, :except => [:show, :new, :edit, :index]
   end
 
   resources :categories

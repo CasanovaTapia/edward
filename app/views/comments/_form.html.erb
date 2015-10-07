@@ -1,9 +1,7 @@
 <%= form_for [@post, @comment] do |f| %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.text_field :body %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Comment' %>
   </div>
 <% end %>
