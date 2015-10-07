@@ -1,5 +1,6 @@
 <h2><%= @post.title %></h2>
 <hr>
+<p class="small"><%= "#{time_ago_in_words(@post.created_at)} ago by #{@post.user.name}" %></p>
 
 <div class="images">
 	<% @post.images.each do |image| %>
