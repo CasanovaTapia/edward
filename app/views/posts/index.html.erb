@@ -1,17 +1,24 @@
 <div class="head-post">
-  <h2 class="text-center"><%= @posts.first.title %></h2>
-  <p class="small"><%= "#{time_ago_in_words(@posts.first.created_at)} ago by #{@posts.first.user.name}" %></p>
+  <%= link_to @posts.first do %>
+    <h4 class="text-center"><%= @posts.first.title %></h4>
+    <p class="small text-center"><%= "#{time_ago_in_words(@posts.first.created_at)} ago by #{@posts.first.user.name}" %></p>
+  <% end %>
   <p><%= @posts.first.body %></p>
 </div>
 <div class="row">
   <% @posts.each do |post| %>
     <div class="col-md-5 post-quick">
-      <h4 class="text-center"><%= post.title %></h4>
-      <p class="small"><%= "#{time_ago_in_words(post.created_at)} ago by #{post.user.name}" %></p>
+      <%= link_to post do %>
+    		<h5 class="text-center"><%= post.title %></h5>
+      <% end %>
+      <p class="small text-center"><%= "#{time_ago_in_words(post.created_at)} ago by #{post.user.name}" %></p>
       <p>
         <%= "#{post.body[0...300]}..." %>
         <%= link_to 'Show More', post %>
       </p>
+      <% if current_user.present? %>
+        <%= link_to "Add Comment", post %>
+      <% end %>
       <% if policy(post).edit? %>
         <%= link_to 'Edit', edit_post_path(post) %>
       <% end %>

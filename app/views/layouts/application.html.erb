@@ -44,10 +44,12 @@
 
 <% unless current_page?(root_url) %>
   <div id="header" class="container text-center">
-    <div class="logo">
-      <%= image_tag src="LOGO.png" %>
-      <h6>A Directory Of Creatives For Creatives</h6>
-    </div>
+    <%= link_to posts_path do %>
+      <div class="logo">
+        <%= image_tag src="LOGO.png" %>
+        <h6>A Directory Of Creatives For Creatives</h6>
+      </div>
+    <% end %>
     <nav class="navbar navbar-default text-center" role="navigation">
       <ul class="nav navbar-nav">
         <li role"presentation"><%= link_to "KNOW ME", profiles_index_path %></li>
