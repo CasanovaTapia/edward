@@ -23,6 +23,7 @@ Industry.create!(title: "pr/marketing")
 Industry.create!(title: "fashion")
 Industry.create!(title: "digital media")
 Industry.create!(title: "interior design")
+Industry.create!(title: "music")
 industries = Industry.all
 
 # Create Categories

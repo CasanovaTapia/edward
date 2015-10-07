@@ -20,7 +20,6 @@
 
 // FONTS
 @import url(https://fonts.googleapis.com/css?family=Lora:400,700,400italic);
-@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:600);
 @font-face { font-family: UpperEastSide; src: url("fonts/UpperEastSide.ttf"); }
 
 // BASE FONTS
@@ -29,16 +28,19 @@ body {
 	font-weight: 400;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   font-weight: 600;
 	text-transform: uppercase;
-  letter-spacing: .4em;
+  letter-spacing: .3em;
   h3 {
-    letter-spacing: .25em;
-  }
-  h4, h5, h6 {
     letter-spacing: .2em;
   }
+  h4, h5 {
+    letter-spacing: .15em;
+  }
+	h6 {
+		letter-spacing: .08em;
+	}
 }
 a, a:visited, a:link, a:active {
 	color: #333;
@@ -67,11 +69,16 @@ a:hover {
 	text-transform: uppercase;
 	font-size: 1.1em;
 	letter-spacing: 2px;
-	font-family: 'Josefin Sans';
+	font-family: 'Helvetica';
 	letter-spacing: .3em;
 	width: 200px;
 	height: 50px;
 	transition: all 0.3s ease 0s;
+}
+input, textarea {
+	font-family: 'Helvetica';
+	text-transform: uppercase;
+	letter-spacing: .1em;
 }
 
 // Button Changes when hovered, focuses, active
@@ -122,9 +129,10 @@ a:hover {
 	.form-logo {
 		margin-bottom: 50px;
 	}
-	input {
-		font-family: 'Josefin Sans';
-		letter-spacing: .3em;
+	input, textarea {
+		font-family: 'Helvetica';
+		text-transform: uppercase;
+		letter-spacing: .1em;
 	}
 }
 
