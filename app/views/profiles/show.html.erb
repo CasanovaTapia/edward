@@ -23,7 +23,7 @@
   <div class="text-left row">
     <div class="col-md-8">
       <% if @profile.bio? %>
-        <p><%= @profile.bio %></p>
+        <p><%= markdown_to_html @profile.bio %></p>
       <% else %>
         <p>We currently have no information on this Edwardian's bio or projects.</p>
       <% end %>

@@ -11,7 +11,7 @@
 	<% end %>
 </div>
 
-<p><%= @post.body %></p>
+<p><%= markdown_to_html @post.body %></p>
 
 <% if policy(@post).edit? %>
 	<%= link_to 'Edit |', edit_post_path(@post) %>
