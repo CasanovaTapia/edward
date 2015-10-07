@@ -17,3 +17,19 @@
 <% if policy(@post).destroy? %>
 	<%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
+
+<%= render 'comments/form' %>
+<% if @post.comments.count > 0 %>
+	<% @post.comments.each do |comment| %>
+	<p>
+		<% unless comment.body == nil %>
+			<%= comment.body %>
+		<% end %>
+		<% unless comment.user == nil || comment.created_at == nil %>
+			<%= "-- #{time_ago_in_words(comment.created_at)} ago by #{comment.user.name}" %>
+		<% end %>
+	</p>
+	<% end %>
+<% else %>
+	<p>This post has no comments, be the first.</p>
+<% end %>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :images
+    resources :comments
   end
 
   resources :categories
